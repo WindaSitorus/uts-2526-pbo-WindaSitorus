@@ -20,7 +20,7 @@ public class Driver2 {
                 break;
             }
 
-            String[] parts = line.split("#");
+            String[] parts = linet.split("#");
             if (parts[0].equals("create-account")) {
                 String name = parts[1];
                 String username = parts[2];
