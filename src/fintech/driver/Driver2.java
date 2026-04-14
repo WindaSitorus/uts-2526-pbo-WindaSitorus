@@ -21,26 +21,10 @@ public class Driver2 {
             }
 
             String[] parts = line.split("#");
-            String command = parts[0];
-
-            if (command.equals("create-account")) {
-                accounts.add(new Account(parts[1], parts[2]));
-            } else if (command.equals("deposit")) {
-                String username = parts[1];
-                double amount = Double.parseDouble(parts[2]);
-                for (Account acc : accounts) {
-                    if (acc.getUsername().equals(username)) {
-                        acc.deposit(amount);
-                    }
-                }
-            } else if (command.equals("withdraw")) {
-                String username = parts[1];
-                double amount = Double.parseDouble(parts[2]);
-                for (Account acc : accounts) {
-                    if (acc.getUsername().equals(username)) {
-                        acc.withdraw(amount);
-                    }
-                }
+            if (parts[0].equals("create-account")) {
+                String name = parts[1];
+                String username = parts[2];
+                accounts.add(new Account(name, username));
             }
         }
 
